@@ -20,8 +20,7 @@ module "secrets" {
 }
 
 module "control_plane_vm" {
-  source  = "ilpozzd/vsphere-vm/talos"
-  version = "1.1.3"
+  source  = "github.com/skbki/terraform-talos-vsphere-vm"
 
   datacenter     = var.datacenter
   datastores     = var.datastores
@@ -66,8 +65,7 @@ module "control_plane_vm" {
 }
 
 module "worker_vm" {
-  source  = "ilpozzd/vsphere-vm/talos"
-  version = "1.1.3"
+  source  = "github.com/skbki/terraform-talos-vsphere-vm"
 
   datacenter     = var.datacenter
   datastores     = reverse(var.datastores)
